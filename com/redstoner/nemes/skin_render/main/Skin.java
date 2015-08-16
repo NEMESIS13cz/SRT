@@ -4,6 +4,28 @@ import org.lwjgl.opengl.GL11;
 
 public class Skin {
 
+	public static void skin_wall(double x, double y, double z, double rotX, double rotY, double rotZ) {
+		GL11.glTranslated(x, y, z);
+		GL11.glRotated(rotX, 1.0d, 0.0d, 0.0d);
+		GL11.glRotated(rotY, 0.0d, 1.0d, 0.0d);
+		GL11.glRotated(rotZ, 0.0d, 0.0d, 1.0d);
+		
+		body(0, 0, 0, 0, 0, -7);
+		left_leg_top(0.8, -11.2, 0.7, -20, 0, 3);
+		left_leg_bottom(1, -14, 1.5, 0, 5, -30);
+		right_leg_top(-2.8, -11, 0, 0, 0, 0);
+		right_leg_bottom(-2.8, -16, 0, 0, 0, 0);
+		left_hand_top(6, -0.9, 0, 0, 0, -5);
+		left_hand_bottom(5.6, -5, 0, -10, 0, -12);
+		right_hand_top(-5.8, -0.4, 0, -40, 10, -10);
+		right_hand_bottom(-6, -3, 2.5, -60, 10, 0);
+		head(0.2, 5.4, 0, 0, 5, 2);
+		
+		GL11.glRotated(-rotZ, 0.0d, 0.0d, 1.0d);
+		GL11.glRotated(-rotY, 0.0d, 1.0d, 0.0d);
+		GL11.glRotated(-rotX, 1.0d, 0.0d, 0.0d);
+		GL11.glTranslated(-x, -y, -z);
+	}
 	
 	public static void draw_skin(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
