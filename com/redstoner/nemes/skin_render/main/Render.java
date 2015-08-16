@@ -17,6 +17,7 @@ public class Render {
 	private static final int startHeight = 720;
 	private static final String name = "Skin render engine";
 	
+	// FPS limit - set to Integer.MAX_VALUE for unlimited
 	private static int framerateLimit = 60;
 	
 	public static void main(String[] args) {
@@ -27,11 +28,16 @@ public class Render {
 		setup();
 		initOGL();
 		
+		// Load the textures - either change the second argument or name your skin file 'skin.png'
 		TextureManager.loadTexture(false, "skin", "skin");
 		
 		render();
 		cleanup();
 	}
+	
+	/**
+	 * Created the window
+	 */
 	
 	private void setup() {
 		try {
@@ -46,6 +52,10 @@ public class Render {
 			System.exit(1);
 		}
 	}
+	
+	/**
+	 * Initializes OpenGL
+	 */
 	
 	private void initOGL() {
 		 GL11.glViewport(0, 0, Display.getWidth(), Display.getHeight());
@@ -62,6 +72,10 @@ public class Render {
 		 GL11.glHint(GL11.GL_PERSPECTIVE_CORRECTION_HINT, GL11.GL_NICEST);
 	}
 	
+	/**
+	 * Re-initializes OpenGL - window resize
+	 */
+	
 	private void reinitOGL() {
 		GL11.glViewport(0, 0, Display.getWidth(), Display.getHeight());
 		GL11.glMatrixMode(GL11.GL_PROJECTION);
@@ -70,6 +84,10 @@ public class Render {
 		GL11.glMatrixMode(GL11.GL_MODELVIEW);
 		GL11.glLoadIdentity();
 	}
+	
+	/**
+	 * Deletes textures, window and runs grabage collection
+	 */
 	
 	private void cleanup() {
 		TextureManager.deleteAllTextures();
@@ -83,6 +101,10 @@ public class Render {
 		System.exit(0);
 	}
 	
+	/**
+	 * Main render loop
+	 */
+	
 	private void render() {
 		long next_frame = System.currentTimeMillis();
 		long frame_time = 1000 / framerateLimit;
@@ -90,13 +112,17 @@ public class Render {
 		long second = 1000;
 		
 		int frames = 0;
+		int last_frames = -1;
 		
 		try {
 			while (!Display.isCloseRequested()) {
 				if (next_second < System.currentTimeMillis()) {
 					next_second += second;
 					
-					Display.setTitle(name + " | " + frames);
+					if (frames != last_frames) {
+						Display.setTitle(name + " | " + frames);
+						last_frames = frames;
+					}
 					frames = 0;
 				}
 				if (next_frame < System.currentTimeMillis()) {
@@ -126,7 +152,7 @@ public class Render {
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
 		TextureManager.bindTexture("skin");
 		
-		Skin.draw_skin(0, 0, -50, 20, rot, 0);
+		Skin.skin_wall(0, 0, -50, 25, rot, 0);
 		rot++;
 		
 		TextureManager.unbind();
