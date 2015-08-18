@@ -14,11 +14,25 @@ import org.lwjgl.opengl.GL11;
 
 public class TextureManager {
 	
+	// The internal map used by this texture manager
 	private static HashMap<String, Texture> textureMap = new HashMap<String, Texture>();
+	
+	/**
+	 * Gets the texture object associated with the given name
+	 * 
+	 * @param name
+	 * @return
+	 */
 	
 	public static Texture getTexture(String name) {
 		return textureMap.get(name);
 	}
+	
+	/**
+	 * Binds the texture associated with the given name to OpenGL
+	 * 
+	 * @param name
+	 */
 	
 	public static void bindTexture(String name) {
 		Texture t = getTexture(name);
@@ -27,9 +41,19 @@ public class TextureManager {
 		}
 	}
 	
+	/**
+	 * Unbinds all textures from OpenGL
+	 */
+	
 	public static void unbind() {
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, 0);
 	}
+	
+	/**
+	 * Deletes the texture associated with the given name, both from the local hash map and OpenGL's texture memory
+	 * 
+	 * @param name
+	 */
 	
 	public static void deleteTexture(String name) {
 		Texture t = getTexture(name);
@@ -38,6 +62,10 @@ public class TextureManager {
 			GL11.glDeleteTextures(t.getID());
 		}
 	}
+	
+	/**
+	 * Deletes all textures from the local hash map and OpenGL's texture memory
+	 */
 	
 	public static void deleteAllTextures() {
 		Iterator<String> i = textureMap.keySet().iterator();
@@ -49,6 +77,15 @@ public class TextureManager {
 		}
 		textureMap.clear();
 	}
+	
+	/**
+	 * Loads a texture from a .png file, converts it, loads it into OpenGL's memory and puts it into the local hash map under the given name
+	 * Additionally if blurry = true doesn't apply certain filters which makes the texture blurry
+	 * 
+	 * @param blurry
+	 * @param name
+	 * @param fileName
+	 */
 	
 	public static void loadTexture(boolean blurry, String name, String fileName) {
 		int[] pixels = null;
