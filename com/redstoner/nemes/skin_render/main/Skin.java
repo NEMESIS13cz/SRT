@@ -4,6 +4,17 @@ import org.lwjgl.opengl.GL11;
 
 public class Skin {
 
+	/**
+	 * Render the skin as if its leaning against a wall
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
+	
 	public static void skin_wall(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
 		GL11.glRotated(rotX, 1.0d, 0.0d, 0.0d);
@@ -27,6 +38,17 @@ public class Skin {
 		GL11.glTranslated(-x, -y, -z);
 	}
 	
+	/**
+	 * Render the plain skin model
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
+	
 	public static void draw_skin(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
 		GL11.glRotated(rotX, 1.0d, 0.0d, 0.0d);
@@ -49,6 +71,17 @@ public class Skin {
 		GL11.glRotated(-rotX, 1.0d, 0.0d, 0.0d);
 		GL11.glTranslated(-x, -y, -z);
 	}
+	
+	/**
+	 * Render the head
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
 	
 	public static void head(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
@@ -127,6 +160,17 @@ public class Skin {
 		GL11.glTranslated(-x, -y, -z);
 	}
 	
+	/**
+	 * Render the main body
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
+	
 	public static void body(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
 		GL11.glRotated(rotX, 1.0d, 0.0d, 0.0d);
@@ -179,6 +223,17 @@ public class Skin {
 		GL11.glTranslated(-x, -y, -z);
 	}
 	
+	/**
+	 * Render the top of the right leg
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
+	
 	public static void right_leg_top(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
 		GL11.glRotated(rotX, 1.0d, 0.0d, 0.0d);
@@ -224,6 +279,17 @@ public class Skin {
 		GL11.glRotated(-rotX, 1.0d, 0.0d, 0.0d);
 		GL11.glTranslated(-x, -y, -z);
 	}
+	
+	/**
+	 * Render the bottom of the right leg
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
 	
 	public static void right_leg_bottom(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
@@ -271,6 +337,17 @@ public class Skin {
 		GL11.glTranslated(-x, -y, -z);
 	}
 	
+	/**
+	 * Render the top of the left leg
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
+	
 	public static void left_leg_top(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
 		GL11.glRotated(rotX, 1.0d, 0.0d, 0.0d);
@@ -316,6 +393,17 @@ public class Skin {
 		GL11.glRotated(-rotX, 1.0d, 0.0d, 0.0d);
 		GL11.glTranslated(-x, -y, -z);
 	}
+	
+	/**
+	 * Render the bottom of the left leg
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
 	
 	public static void left_leg_bottom(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
@@ -363,6 +451,17 @@ public class Skin {
 		GL11.glTranslated(-x, -y, -z);
 	}
 	
+	/**
+	 * Render the top of the left hand
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
+	
 	public static void left_hand_top(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
 		GL11.glRotated(rotX, 1.0d, 0.0d, 0.0d);
@@ -408,6 +507,17 @@ public class Skin {
 		GL11.glRotated(-rotX, 1.0d, 0.0d, 0.0d);
 		GL11.glTranslated(-x, -y, -z);
 	}
+	
+	/**
+	 * Render the bottom of the left hand
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
 	
 	public static void left_hand_bottom(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
@@ -455,6 +565,17 @@ public class Skin {
 		GL11.glTranslated(-x, -y, -z);
 	}
 	
+	/**
+	 * Render the top of the right hand
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
+	
 	public static void right_hand_top(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
 		GL11.glRotated(rotX, 1.0d, 0.0d, 0.0d);
@@ -500,6 +621,17 @@ public class Skin {
 		GL11.glRotated(-rotX, 1.0d, 0.0d, 0.0d);
 		GL11.glTranslated(-x, -y, -z);
 	}
+	
+	/**
+	 * Render the bottom of the right hand
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param rotX
+	 * @param rotY
+	 * @param rotZ
+	 */
 	
 	public static void right_hand_bottom(double x, double y, double z, double rotX, double rotY, double rotZ) {
 		GL11.glTranslated(x, y, z);
