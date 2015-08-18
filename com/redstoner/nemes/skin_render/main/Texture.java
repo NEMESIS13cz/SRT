@@ -10,13 +10,31 @@ public class Texture {
 		height = h;
 	}
 	
+	/**
+	 * The texture ID in OpenGL's texture registry
+	 * 
+	 * @return
+	 */
+	
 	public int getID() {
 		return ID;
 	}
 	
+	/**
+	 * The width of the texture
+	 * 
+	 * @return
+	 */
+	
 	public int getWidth() {
 		return width;
 	}
+	
+	/**
+	 * The height of the texture
+	 * 
+	 * @return
+	 */
 	
 	public int getHeight() {
 		return height;
