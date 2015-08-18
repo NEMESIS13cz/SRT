@@ -148,6 +148,10 @@ public class Render {
 	
 	int rot = 0;
 	
+	/**
+	 *  Render function, gets called every frame
+	 */
+	
 	private void draw() {
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
 		TextureManager.bindTexture("skin");
@@ -161,6 +165,16 @@ public class Render {
 		
 		Display.update();
 	}
+	
+	/**
+	 * Helper function to add a texture and location vertex at the same time
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param texture_x
+	 * @param texture_y
+	 */
 	
 	public static void add_point(double x, double y, double z, double texture_x, double texture_y) {
 		GL11.glTexCoord2d(texture_x / 64.0d, texture_y / 64.0d);
