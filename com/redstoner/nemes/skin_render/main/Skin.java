@@ -23,7 +23,7 @@ public class Skin {
 		
 		body(0, 0, 0, 0, 0, -7);
 		left_leg_top(0.8, -11.2, 0.7, -20, 0, 3);
-		left_leg_bottom(1, -14, 1.5, 0, 5, -30);
+		left_leg_bottom(1, -14.5, 1.4, 0, 5, -30);
 		right_leg_top(-2.8, -11, 0, 0, 0, 0);
 		right_leg_bottom(-2.8, -16, 0, 0, 0, 0);
 		left_hand_top(6, -0.9, 0, 0, 0, -5);

@@ -146,17 +146,17 @@ public class Render {
 		}
 	}
 	
-	int rot = 0;
-	
 	/**
 	 *  Render function, gets called every frame
 	 */
+	
+	int rot = 0;
 	
 	private void draw() {
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
 		TextureManager.bindTexture("skin");
 		
-		Skin.skin_wall(0, 0, -50, 25, rot, 0);
+		Skin.skin_wall(0, 0, -35, 0, -18, 0);
 		rot++;
 		
 		TextureManager.unbind();
